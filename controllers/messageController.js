@@ -14,3 +14,11 @@ const messages = [
 exports.getMessages = (req, res) => {
   res.render("index", { messages: messages });
 };
+
+exports.getNewMessageForm = (req, res) => {
+  res.render("form");
+};
+
+exports.postNewMessage = (req, res) => {
+  res.send("successful 'POST' to /new");
+};
