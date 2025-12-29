@@ -8,15 +8,11 @@
   <body>
     <h1>Odin Mini Message Board</h1>
     <div>
-      <% for (message of messages) { %>
       <div>
         <span><%= message.text %></span>
         <span><%= message.user %></span>
         <span><%= message.added %></span>
-        <a href="/details/<%= message.id %>">Message Details</a>
       </div>
-      <% } %>
     </div>
-    <a href="/new">Add Your Message</a>
   </body>
 </html>
