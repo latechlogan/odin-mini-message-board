@@ -20,5 +20,10 @@ exports.getNewMessageForm = (req, res) => {
 };
 
 exports.postNewMessage = (req, res) => {
-  res.send("successful 'POST' to /new");
+  messages.push({
+    text: req.body.message,
+    user: req.body.user,
+    added: new Date(),
+  });
+  res.redirect("/");
 };
