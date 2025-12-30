@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Odin | Mini Message Board</title>
-  </head>
-  <body>
-    <h1>Odin Mini Message Board</h1>
-    <div>
+<html lang="en" class="p-8">
+  <%- include('shared/head') %>
+  <body class="sm:container mx-auto">
+    <h1 class="text-4xl">Odin Mini Message Board</h1>
+    <div class="my-4">
       <% for (message of messages) { %>
       <div>
-        <span><%= message.text %></span>
-        <span><%= message.user %></span>
-        <span><%= message.added %></span>
+        <span class="text-base"><%= message.text %></span>
+        <span class="text-base"><%= message.user %></span>
+        <span class="text-xs"><%= message.added %></span>
         <a href="/details/<%= message.id %>">Message Details</a>
       </div>
       <% } %>
     </div>
-    <a href="/new">Add Your Message</a>
+    <a
+      href="/new"
+      class="inline-block py-2 px-4 bg-green-600 text-white rounded"
+      >Add Your Message</a
+    >
   </body>
 </html>

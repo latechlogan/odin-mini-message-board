@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/latechlogan/odin-mini-message-board#readme",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
     "ejs": "^3.1.10",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "tailwindcss": "^4.1.18"
   }
 }
