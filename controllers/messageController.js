@@ -3,13 +3,13 @@ const messages = [
     id: 0,
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: new Date().toUTCString(),
   },
   {
     id: 1,
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: new Date().toUTCString(),
   },
 ];
 
@@ -28,7 +28,7 @@ exports.postNewMessage = (req, res) => {
     id: nextId++,
     text: req.body.message,
     user: req.body.user,
-    added: new Date(),
+    added: new Date().toUTCString(),
   });
   res.redirect("/");
 };

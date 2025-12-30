@@ -3,16 +3,37 @@
   <%- include('shared/head') %>
   <body class="sm:container mx-auto">
     <h1 class="text-4xl">Odin Mini Message Board</h1>
-    <div class="my-4">
+
+    <!-- all messages container -->
+    <div class="mt-10">
       <% for (message of messages) { %>
-      <div>
-        <span class="text-base"><%= message.text %></span>
-        <span class="text-base"><%= message.user %></span>
-        <span class="text-xs"><%= message.added %></span>
-        <a href="/details/<%= message.id %>">Message Details</a>
+
+      <!-- individual message container -->
+      <div class="mb-10">
+        <div class="message-content">
+          <span class="text-xl"><%= message.text %></span>
+        </div>
+        <div class="message-user mt-2">
+          <span class="text-base"><%= message.user %></span>
+        </div>
+        <div
+          class="message-meta mt-1 flex flex-row flex-nowrap justify-start gap-4 items-center"
+        >
+          <span class="text-xs font-light"><%= message.added %></span>
+          <a
+            href="/details/<%= message.id %>"
+            class="text-xs font-light underline"
+            >Message Details</a
+          >
+        </div>
+        <!-- <hr class="text-gray-300 block mt-2" /> -->
       </div>
+      <!-- end individual message container -->
+
       <% } %>
     </div>
+    <!-- end all messages container -->
+
     <a
       href="/new"
       class="inline-block py-2 px-4 bg-green-600 text-white rounded"

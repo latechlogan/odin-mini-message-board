@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="p-8">
   <%- include('shared/head') %>
-  <body>
-    <h1>Odin Mini Message Board</h1>
-    <div>
-      <div>
-        <span><%= message.text %></span>
-        <span><%= message.user %></span>
-        <span><%= message.added %></span>
-      </div>
+  <body class="sm:container mx-auto">
+    <a href="/" class="text-sm">Back to Messages</a>
+    <div class="mt-8">
+      <span class="text-2xl"><%= message.text %></span>
+    </div>
+    <div class="mt-4">
+      <span class="inline-block"
+        ><span class="">Username:&ensp;</span><%= message.user %></span
+      >
+      <span class="inline-block ml-8"
+        ><span class="">Date Posted:&ensp;</span><%= message.added %></span
+      >
     </div>
   </body>
 </html>

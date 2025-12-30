@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="p-8">
   <%- include('shared/head') %>
-  <body>
-    <main>
-      <h1>Post a New Message</h1>
-      <form method="POST" action="/new">
-        <div>
-          <label for="user">Your Name:</label>
-          <input type="text" id="user" name="user" required />
-        </div>
-        <div>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit">Submit Message</button>
-      </form>
-    </main>
+  <body class="sm:container mx-auto">
+    <h1 class="text-4xl">Post a New Message</h1>
+    <form
+      method="POST"
+      action="/new"
+      class="mt-10 flex flex-col"
+      id="newMessageForm"
+    >
+      <div class="flex flex-col mb-4">
+        <label for="user" class="mb-2">Your Name:</label>
+        <input
+          type="text"
+          id="user"
+          name="user"
+          required
+          class="border border-gray-300 rounded p-2"
+        />
+      </div>
+      <div class="flex flex-col mb-8">
+        <label for="message" class="mb-2">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="border border-gray-300 rounded p-2"
+        ></textarea>
+      </div>
+    </form>
+    <button
+      type="submit"
+      form="newMessageForm"
+      class="inline-block py-2 px-4 bg-green-600 text-white rounded"
+    >
+      Submit Message
+    </button>
+    <a href="/" class="inline-block py-2 px-4 ml-4 text-gray-500 rounded"
+      >Cancel</a
+    >
   </body>
 </html>
