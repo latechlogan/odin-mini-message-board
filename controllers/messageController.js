@@ -7,7 +7,11 @@ async function getMessages(req, res) {
 }
 
 function getNewMessageForm(req, res) {
-  res.render("form");
+  res.render("form", {
+    errors: null,
+    username: "",
+    message: "",
+  });
 }
 
 const validateMessage = [
