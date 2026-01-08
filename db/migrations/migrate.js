@@ -17,7 +17,6 @@ const SQL = `
 
 async function migrate() {
   console.log("migrating...");
-  console.log("Connecting to:", process.env.DATABASE_URL);
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
   });
