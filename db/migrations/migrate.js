@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const { Client } = require("pg");
 
@@ -14,7 +16,8 @@ const SQL = `
 `;
 
 async function migrate() {
-  console.log("seeding...");
+  console.log("migrating...");
+  console.log("Connecting to:", process.env.DATABASE_URL);
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
   });
