@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate": "node db/migrations/migrate.js",
+    "db:seed": "node db/seeds/seedLocal.js",
+    "css:build": "npx @tailwindcss/cli -i ./public/input.css -o ./public/output.css",
+    "css:watch": "npx @tailwindcss/cli -i ./public/input.css -o ./public/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -20,8 +24,11 @@
   "homepage": "https://github.com/latechlogan/odin-mini-message-board#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "pg": "^8.16.3",
     "tailwindcss": "^4.1.18"
   }
 }
